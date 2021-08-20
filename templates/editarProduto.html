@@ -1,0 +1,34 @@
+{{define "edit"}}
+{{template "_head"}}
+{{template "_navbar"}}
+
+<body>
+  <h1 class="col-xs-1" align="center">Editando Produto</h1>
+  <form method="post" action="update">
+    <input type="hidden" name="id" value="{{.Id}}" />
+    <section class="card col-md-7" style="float:none;margin:auto;">
+      <div class="input-group input-group-lg" style="float:none;margin:auto;">
+        <div class="input-group-text col-md-2" id="inputGroup-sizing-lg">Nome</div>
+        <input type="text" name="nome" value="{{.Nome}}" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg">
+        <div class="input-group-text col-md-2 form-group" id="inputGroup-sizing-lg">Descrição</div>
+        <input type="text" name="descricao" value="{{.Descricao}}" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      </div>
+      <div class="input-group input-group-lg" style="float:none;margin:auto;">
+        <div class="input-group-text col-md-2 form-group" id="inputGroup-sizing-lg">Preço</div>
+        <input type="number" name="preco" value="{{.Preco}}" min="0" step="any" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <div class="input-group-text col-md-2 form-group" id="inputGroup-sizing-lg">Quantidade</div>
+        <input type="number" name="quantidade" value="{{.Quantidade}}" min="1" step="1" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      </div>
+      <section class="card-footer">
+        <input type="submit" name="atualizar" value="Atualizar" class="btn btn-primary mb-2 col-md-2"
+          style="float: left;"></input>
+        <a href="/" class="btn btn-primary mb-2 col-md-2" style="float: right;">Voltar</a>
+      </section>
+    </section>
+  </form>
+</body>
+{{end}}
